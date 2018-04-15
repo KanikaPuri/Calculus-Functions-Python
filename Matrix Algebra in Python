@@ -1,0 +1,19 @@
+#compute Inverse of Matrix_a and multiply it with its' transpose matrix to create an identity matrix.
+
+matrix_a = np.asarray([
+    [1.5, 3],
+    [1, 4]
+])
+
+def matrix_inverse_two(matrix):
+    try:
+        determinant = 1/(matrix[0][0]*matrix[1][1] - matrix[0][1]*matrix[1][0])
+    except ZeroDivisionError:
+        return "Error!"
+    matrix_inverse = np.asarray([[matrix[1][1],-matrix[0][1]],
+                      [-matrix[1][0],matrix[0][0]]])
+    return np.dot(determinant,matrix_inverse)
+
+inverse_a = matrix_inverse_two(matrix_a)
+i_2 = np.dot(inverse_a,matrix_a        )
+print(i_2)
