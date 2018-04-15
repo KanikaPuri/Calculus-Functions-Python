@@ -30,3 +30,15 @@ x2, y = sympy.symbols('x2 y')
 
 limit_four = sympy.limit((-(x**2) + 3*x)/(x-3),x,3)
 print(limit_four)
+
+#Differentiation
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+x=np.linspace(-5,6,110) # Use numpy.linspace to generate 110 values from -5 to 6
+y = -(x**2) + 3*x -1
+
+plt.plot(x,y)
+plt.show()
