@@ -1,0 +1,34 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+#This function plots y values over a linear space where the y-values describe trajectory of a ball and x is time in seconds. How do you determine at what point of time, y was highest? Visually, find point where dy (derivative of y) is equal to 0 
+
+x = np.linspace(0,3,301) # 301 values from 0 to 3 assigned to x
+y = -(x**2) + 3*x -1 #transform y by applying x values to function
+dy = -2*x + 3
+plt.plot(x,dy) 
+plt.show()
+
+
+#Create Secant Line for function
+
+import seaborn
+seaborn.set(style='darkgrid')
+
+def draw_secant(x_values):
+    x = np.linspace(-20,30,100)
+    y = -1*(x**2) + x*3 - 1
+    plt.plot(x,y)
+    # Add your code here.
+    y_values = []
+    for k in x_values:
+        y_values.append(-1*(k**2) + k*3 - 1)
+    slope = (y_values[1]-y_values[0])/(x_values[1]-x_values[0])
+    b = y_values[1] - slope*x_values[1]
+    plt.plot(x,slope*x+b,c='green')
+    plt.show()
+    
+draw_secant([3,5])
+draw_secant([3,10])
+draw_secant([3,15])
+
