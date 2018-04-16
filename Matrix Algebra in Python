@@ -17,3 +17,18 @@ def matrix_inverse_two(matrix):
 inverse_a = matrix_inverse_two(matrix_a)
 i_2 = np.dot(inverse_a,matrix_a        )
 print(i_2)
+
+
+#Inconsistent Equations
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0,20,1000)
+y1 = -2*x + (5/4)
+y2 = -2*x + (5/2)
+
+plt.plot(x, y1, c='blue')
+plt.plot(x, y2, c='blue')
+
+
